@@ -40,6 +40,10 @@
                 li.textContent = todo.text;
                 
 
+                li.addEventListener("click",()=> {
+                    todo.done = !todo.done
+                    save()
+                    render()})           //这一段实现了元素的增添
                 
            
 
