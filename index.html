@@ -19,6 +19,9 @@
         <script>
             let todos = [];
             
+            const input = document.getElementById("input");
+            const btn = document.getElementById("todo");
+            btn.addEventListener("click",addToDo);
             const saved = localStorage.getItem("todos");
 
             
@@ -53,6 +56,14 @@
             });                         //这一段了是对li内部元素点击会有红色线条穿过
             } 
             
+            function addToDo(){
+                const text = input.value;
+                input.value = "";
+                if(text.trim()==="")return;
+                todos.push({text:text,done:false});
+                save();
+                render();
+            }
                 render();
         </script>
     </body>
