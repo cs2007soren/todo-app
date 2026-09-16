@@ -1,0 +1,37 @@
+<!-- Day26 闭卷重写 · 2026-09-14 · 目标：账本 + 读账 + save + render + 添加 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+    </head>
+    <style>
+        .underline{
+          text-decoration: line-through;
+          color: red;  
+        }
+    </style>
+    <body>
+        <!--<button id ="delte" type="button">删除</button>-->
+        <input  id="input" type="text" placeholder = "what i want to do">
+        <button id ="todo" type="button">添加</button>
+        <ul id="list"></ul> 
+        <script>
+            let todos = [];
+            
+            const saved = localStorage.getItem("todos");
+
+            
+            if(saved!==null){
+                todos =JSON.parse(saved);
+            }
+            function save(){
+                localStorage.setItem("todos",JSON.stringify(todos));
+            }
+
+
+            
+                render();
+        </script>
+    </body>
+</html>
