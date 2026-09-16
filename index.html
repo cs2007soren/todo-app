@@ -15,6 +15,7 @@
         <!--<button id ="delte" type="button">删除</button>-->
         <input  id="input" type="text" placeholder = "what i want to do">
         <button id ="todo" type="button">添加</button>
+        <button id ="clear" type="button">删除全部</button>
         <ul id="list"></ul> 
         <script>
             let todos = [];
@@ -24,6 +25,7 @@
             btn.addEventListener("click",addToDo);
             const saved = localStorage.getItem("todos");
 
+            const btn_clear= document.getElementById("clear");
             
             if(saved!==null){
                 todos =JSON.parse(saved);
@@ -32,6 +34,11 @@
                 localStorage.setItem("todos",JSON.stringify(todos));
             }
 
+            btn_clear.addEventListener("click",()=>{
+                    todos = [];
+                    save();
+                    render();              //这一段是点击即删除全部元素
+            })
 
             function render()
             {
