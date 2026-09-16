@@ -56,6 +56,11 @@
                     render()})           //这一段实现了元素的增添
                 
            
+                li.addEventListener("dblclick",()=>{
+                    todos = todos.filter(t=>t!==todo);
+                    save();
+                    render();           //这一段实现了元素的删减
+                })
 
                 if(todo.done){
                     li.classList.add("underline");
