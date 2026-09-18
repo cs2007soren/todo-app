@@ -9,12 +9,18 @@
           text-decoration: line-through;
           color: red;  
         }
+        .top-bar{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
     </style>
     <body>
-        <!--<button id ="delte" type="button">删除</button>-->
-        <input  id="input" type="text" placeholder = "what i want to do">
-        <button id ="todo" type="button">添加</button>
-        <button id ="clear" type="button">删除全部</button>
+        <div class="top-bar">
+            <input  id="input" type="text" placeholder = "what i want to do">
+            <button id ="todo" type="button">添加</button>
+            <button id ="clear" type="button">删除全部</button>
+        </div>
         <ul id="list"></ul> 
         <script>
             let todos = [];
